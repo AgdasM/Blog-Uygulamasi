@@ -1,0 +1,21 @@
+﻿
+@using (Html.BeginForm("List", "Blog", FormMethod.Get))
+{
+
+
+    <div class="well">
+        <h4>Blog Search</h4>
+        <hr />
+        <div class="input-group">
+            @Html.TextBox("Keyword", null, new { @class = "form-control" })
+
+            <span class="input-group-btn">
+                <button type="submit" class="btn btn-default" >
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"  >Search</span>
+                </button>
+
+            </span>
+        </div>
+    </div>
+
+}

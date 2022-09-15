@@ -1,0 +1,38 @@
+﻿
+@model IEnumerable<BlogMvcApp.Models.BlogModel>
+
+@if (Model.Count()==0)
+{
+    <div class="alert-warning">
+        <h3>No Records Found</h3>
+    </div>
+}
+else
+{
+
+
+    foreach (var item in Model)
+    {
+        <div class="nav-item ">
+
+            <h3>
+                @item.Title
+            </h3>
+            <p>
+                <span>
+                    @item.DateOfUpload
+                </span>
+            </p>
+
+            <img src="https://via.placeholder.com/300x250?text=300x250+MPU " alt="" />
+
+            <p>
+                @item.Explanation
+            </p>
+            <p>
+                @Html.ActionLink("Details", "Details", "Blog", new { id = item.Id }, new { @class = "btn btn-primary" })
+
+            </p>
+        </div>
+    }
+}
